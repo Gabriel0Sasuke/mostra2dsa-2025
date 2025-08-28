@@ -1,0 +1,87 @@
+@font-face {
+    font-family: Horizon;
+    src: url(../Fonts/Horizon/gc-horizon-1.ttf);
+}
+@font-face {
+    font-family: Bebas_Neue;
+    src: url(../Fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+@font-face {
+    font-family: Roboto;
+    src: url(../Fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;     
+}
+#centraliza{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle at 50% 50%, #1a1a1a, #000000);
+    align-items: center;
+}
+#name_space{
+    background-color: #8b0000;
+    padding-top: 1vh;
+    color: #ddbf74;
+    display: flex;
+    text-transform: uppercase;
+    margin-top: 3vh;
+    width: 80vw;
+    height: auto;
+    text-align: center;
+    font-size: 4.5em;
+    border-radius: 30px;
+    font-family: Horizon;
+    line-height: 17vh;
+}
+img{
+    width: 24vw;
+    height: auto;
+    margin-top: 15vh;
+    right: 18vw;
+    position: absolute;
+    filter: brightness(0);
+}
+.button{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+a{
+    background-color: black;
+    color: white;
+    border: none;
+    font-family: Bebas_Neue;
+    font-size: 2.3em;
+    height: 15vh;
+    width: 55vw;
+    border-radius: 30px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: solid 2px transparent;
+}
+a:last-child{
+    font-size: 2em;
+}
+#sala{
+    color: #eaeaea;
+    text-transform: uppercase;
+    font-family: Horizon;
+    font-size: 2em;
+    margin-left: -80vw;
+}
+#down{
+    color:#ddbf74;
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+}

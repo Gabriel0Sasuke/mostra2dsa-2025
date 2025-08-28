@@ -1,0 +1,120 @@
+
+@font-face {
+    font-family: Horizon;
+    src: url(../Fonts/Horizon/gc-horizon-1.ttf);
+}
+@font-face {
+    font-family: Bebas_Neue;
+    src: url(../Fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+@font-face {
+    font-family: Roboto;
+    src: url(../Fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;     
+}
+
+main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle at 50% 50%, #1a1a1a, #000000);
+    align-items: center;
+}
+h1{
+    font-family: Horizon;
+    color: white;
+    text-transform: uppercase;
+    font-size: 3em;
+}
+#vidas{
+    width: 30vw;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2vh;
+    font-size: 1.7em;
+    margin-left: -65vw;
+}
+#pergunta{
+    font-family: Roboto;
+    color: white;
+    font-size: 1.5em;
+    width: 98vw;
+    height: 33vh;
+    display: flex;
+    background-color: #8b0000;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    margin-bottom: 3vh;
+    padding: 1vw;
+    text-align: justify;
+}
+#respostas-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.resposta{
+    width: 48vw;
+    height: 22vh;
+    background-color: #8b0000;
+    color: white;
+    font-family: Roboto;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vw;
+    text-align: center;
+    padding: 1vw;
+    border-radius: 16px;
+    cursor: pointer;
+}
+#form_nome{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40vh;
+    width: 95vw;
+    background-color: azure;
+    z-index: 3;
+    margin-top: 30vh;
+    font-size: 1em;
+    border: solid  2px black;
+    border-radius: 16px;
+    font-family: Roboto;
+    padding: 0 1vw 0 1vw;
+}
+#form_nome input{
+    width: 90vw;
+    height: 7vh;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 16px;
+    margin-top: 2vh;
+    font-size: 1.2em;
+    text-align: center;
+}
+#form_nome button{
+    width: 90vw;
+    height: 7vh;
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 1.2em;
+    margin-top: 0vh;
+    cursor: pointer;
+}
+#form_nome label{
+    font-size: 2em;
+    margin-top: 2vh;
+    color: black;
+}

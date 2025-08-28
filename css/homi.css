@@ -1,0 +1,64 @@
+@font-face {
+    font-family: Horizon;
+    src: url(../Fonts/Horizon/gc-horizon-1.ttf);
+}
+
+@font-face {
+    font-family: Bebas_Neue;
+    src: url(../Fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(../Fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #eaeaea;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle at 50% 50%, #1a1a1a, #000000);
+    font-family: Bebas_Neue;
+    font-size: 1.75em;
+    padding: 3vw 2vh;
+}
+h1{
+    text-align: center;
+}
+#image img {
+    width: 40vw;
+    height: 30vh;
+    margin-right: 2vw;
+}
+
+#text1 {
+    font-family: Roboto;
+    font-size: .5em;
+    margin-left: auto;
+}
+
+#text2 {
+    font-family: Roboto;
+    font-size: .5em;
+    margin-left: auto;
+}
+
+#hit {
+    display: flex;
+    flex-direction: row;
+}
+#button{
+    background-color: red;
+    height: 5vh;
+    width: 20vw;
+    display: flex;
+    left: 0;
+}
