@@ -37,3 +37,11 @@ function sair(tipo) {
         }
     }
 }
+
+function perguntas(abrir_fechar){
+    if (abrir_fechar === 1) {
+        document.getElementById('perguntafixed').style.display = 'flex';
+}else if (abrir_fechar === 2) {
+        document.getElementById('perguntafixed').style.display = 'none';
+    }
+}

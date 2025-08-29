@@ -14,21 +14,21 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
     nome VARCHAR(100) NOT NULL UNIQUE
 );
 
---tabela para as perguntas que seão feitas
+--tabela para as perguntas que serão feitas
 CREATE TABLE IF NOT EXISTS `perguntas`(
     id INT AUTO_INCREMENT PRIMARY KEY,
     texto_pergunta VARCHAR(255) NOT NULL,
-    filme_associado VARCHAR(100) NOT NULL DEFAULT('Geral'),
+    filme_associado VARCHAR(100) NOT NULL,
     nivel_dificuldade INT NOT NULL
 );
 
---tabela para as respostas das perguntas
+-- Tabela para as respostas das perguntas
 CREATE TABLE IF NOT EXISTS `respostas`(
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_pergunta INT NOT NULL,
-    texto_resposta VARCHAR(50) NOT NULL,
+    texto_resposta VARCHAR(50) NOT NULL, 
     correta BOOLEAN NOT NULL,
-    Foreign Key (id_pergunta) REFERENCES perguntas(id)
+    FOREIGN KEY (id_pergunta) REFERENCES perguntas(id) ON DELETE CASCADE
 );
 
 --tabela para a tabela que o usuario ver os resultados
@@ -57,5 +57,9 @@ CREATE TABLE IF NOT EXISTS `acessos`(
     navegador VARCHAR(255) NOT NULL,
     ip VARCHAR(255) NOT NULL
 );
-select * from acessos;
+select * from perguntas;
+select * from respostas;
 drop table acessos;
+
+drop table perguntas;
+drop table respostas;

@@ -40,6 +40,61 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <main>
         <h2>Bem vindo, <?php echo $nomeadmin ?></h2>
 
+        <form id="perguntafixed" action="pergunta.php" method="post">
+          <h1>Adicionar Pergunta</h1>
+
+          <label for="pergunta">Digite a Pergunta</label>
+          <input type="text" name="pergunta" placeholder="Digite a pergunta" required maxlength="200">
+
+          <label for="filmeassoc">Filme Associado</label>
+          <select name="filmeassoc" id="filmeassoc" required>
+            <option value="Geral">Geral</option>
+            <option value="Psicose">Psicose</option>
+            <option value="O Iluminado">O Iluminado</option>
+            <option value="Fragmentado">Fragmentado</option>
+            <option value="Menu">O Menu</option>
+            <option value="Janela Indiscreta">Janela Indiacreta</option>
+          </select>
+
+          <label for="dificuldade">Dificuldade da Pergunta</label>
+          <select name="dificuldade" id="dificuldade" required>
+            <option value="1">Fácil</option>
+            <option value="2">Médio</option>
+            <option value="3">Difícil</option>
+          </select>
+
+          <label for="resposta1">Resposta 1</label>
+          <input type="text" name="resposta1" placeholder="Digite a resposta 1" required maxlength="50">
+          <div class="correta">
+            Resposta Correta?
+          <input type="radio" name="correta" value="1" required>
+        </div>
+
+        <label for="resposta2">Resposta 2</label>
+          <input type="text" name="resposta2" placeholder="Digite a resposta 1" required maxlength="50">
+          <div class="correta">
+            Resposta Correta?
+          <input type="radio" name="correta" value="2" required>
+        </div>
+
+        <label for="resposta3">Resposta 3</label>
+          <input type="text" name="resposta3" placeholder="Digite a resposta 1" required maxlength="50">
+          <div class="correta">
+            Resposta Correta?
+          <input type="radio" name="correta" value="3" required>
+        </div>
+
+        <label for="resposta4">Resposta 4</label>
+          <input type="text" name="resposta4" placeholder="Digite a resposta 1" required maxlength="50">
+          <div class="correta">
+            Resposta Correta?
+          <input type="radio" name="correta" value="4" required>
+        </div>
+
+        <button type="button" onclick="perguntas(2)">Fechar Formulario</button>
+        <button type="submit">Adicionar Pergunta</button>
+        </form>
+
         <div class="blocos" id="bloco1">
 
           <div class="infos">Número de Visitas 
@@ -74,14 +129,15 @@ echo $navegador_mais_utilizado;
 
         </div>
 
-        <div class="blocos">
-
+        <div class="blocos" id="perguntas" onclick="perguntas(1)">
+          Perguntas e Respostas
         </div>
 
         <div class="blocos">
 
         </div>
         <div class="blocos">
+
         
             <div id="voltar" onclick=sair(1) class="botoesair">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
