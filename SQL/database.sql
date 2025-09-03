@@ -1,4 +1,4 @@
--- Active: 1743912631785@@localhost@3306@mostra2025
+-- Active: 1756910509908@@localhost@3306
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -19,7 +19,8 @@ CREATE TABLE IF NOT EXISTS `perguntas`(
     id INT AUTO_INCREMENT PRIMARY KEY,
     texto_pergunta VARCHAR(150) NOT NULL,
     filme_associado VARCHAR(100) NOT NULL,
-    nivel_dificuldade INT NOT NULL
+    nivel_dificuldade INT NOT NULL,
+    autor_pergunta VARCHAR(15) NOT NULL
 );
 
 -- Tabela para as respostas das perguntas

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $sql = new mysqli("localhost", "root", "", "mostra2025");
 
 if ($sql->connect_error) {
@@ -30,13 +31,13 @@ if ($correta == 1) {
 } else if ($correta == 4) {
     $resposta4_correta = true;
 }
-
+$nome_autor = $_SESSION['nomeadmin'];
 //Inserindo a Pergunta
 
-$sql_pergunta = "INSERT INTO perguntas (texto_pergunta, filme_associado, nivel_dificuldade) VALUES (?, ?, ?)";
+$sql_pergunta = "INSERT INTO perguntas (texto_pergunta, filme_associado, nivel_dificuldade, autor_pergunta) VALUES (?, ?, ?, ?)";
 $stmt_pergunta = $sql->prepare($sql_pergunta);
 
-$stmt_pergunta->bind_param("ssi", $pergunta, $filmeassoc, $dificuldade);
+$stmt_pergunta->bind_param("ssis", $pergunta, $filmeassoc, $dificuldade, $nome_autor);
 
 if ($stmt_pergunta->execute()) {
     $id_nova_pergunta = $sql->insert_id;
