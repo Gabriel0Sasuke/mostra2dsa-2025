@@ -22,7 +22,7 @@ main{
     width: 100vw;
     display: flex;
     flex-direction: column;
-    background: radial-gradient(circle at 50% 50%, #1a1a1a, #000000);
+    background: #e0ddcd;
     align-items: center;
 }
 h1{
