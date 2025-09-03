@@ -13,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: admin.php");
     exit();
 }
+
+$perguntas = $sql->query("SELECT * FROM perguntas");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -44,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <h1>Adicionar Pergunta</h1>
 
           <label for="pergunta">Digite a Pergunta</label>
-          <input type="text" name="pergunta" placeholder="Digite a pergunta" required maxlength="200">
+          <input type="text" name="pergunta" placeholder="Digite a pergunta" required maxlength="150">
 
           <label for="filmeassoc">Filme Associado</label>
           <select name="filmeassoc" id="filmeassoc" required>
@@ -95,6 +97,88 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit">Adicionar Pergunta</button>
         </form>
 
+        <div id="visualizarpergunta">
+          <div>
+            <h1>Visualizar Perguntas</h1>
+
+            <?php if ($perguntas->num_rows === 0) {
+                echo "<h3 id='table'>Nenhuma pergunta cadastrada</h3>";
+            } else { ?>
+            <table>
+
+              <tr>
+                <th>ID</th>
+                <th>PERGUNTA</th>
+                <th>FILME</th>
+                <th>DIFICULDADE</th>
+                <th>Ação</th>
+              </tr>
+
+              <?php while ($perguntafetch = $perguntas->fetch_array()) { 
+                $perguntaid = $perguntafetch['id'];
+                $perguntatexto = $perguntafetch['texto_pergunta'];
+                $perguntafilme = $perguntafetch['filme_associado'];
+                $perguntadificuldade = $perguntafetch['nivel_dificuldade'];
+                ?>
+              <tr class="tr-pergunta">
+                <td><?php  echo $perguntaid ?></td>
+                <td><?php  echo $perguntatexto ?></td>
+                <td><?php  echo $perguntafilme ?></td>
+                <td>
+                  <?php 
+                 if ($perguntadificuldade == 1) {
+                    echo "Fácil";
+                 } else if ($perguntadificuldade == 2) {
+                    echo "Médio";
+                 } else if ($perguntadificuldade == 3) {
+                    echo "Difícil";
+                 }
+                 ?>
+                 </td>
+                <td><a href="excluir_pergunta.php?id=<?php echo $perguntaid?>">Excluir</a></td>
+              </tr>
+              <?php
+              $respostas = $sql->query("SELECT * FROM respostas WHERE id_pergunta = $perguntaid"); 
+
+              ?>
+              <tr class="tr-detalhes hidden">
+                <td colspan="5" class="td-detalhes">                    
+                    <table class="sub-table">
+                        <tr>
+                            <th>ID</th>
+                            <th>Texto da Resposta</th>
+                            <th>É a Correta?</th>
+                            </tr>
+                            <?php while ($respostafetch = $respostas->fetch_array()) { 
+                                $respostaid = $respostafetch['id'];
+                                $respostatexto = $respostafetch['texto_resposta'];
+                                $respostacorreta = $respostafetch['correta'];
+                                ?>
+                            <tr>
+                              <td><?php echo $respostaid ?></td>
+                              <td><?php echo $respostatexto ?></td>
+                              <td>
+                                <?php
+                                if ($respostacorreta == 1) {
+                                    echo "Sim✅";
+                                } else {
+                                    echo "Não❌";
+                                } 
+                                ?>
+                              </td>
+                            </tr>
+                            <?php } ?>
+                    </table>
+                </td>
+            </tr>
+          <?php } ?>
+            </table>
+            <?php } ?>
+          </div>
+          
+          <button onclick="visualizarperguntas(2)">Voltar</button>
+        </div>
+
         <div class="blocos" id="bloco1">
 
           <div class="infos">Número de Visitas 
@@ -130,15 +214,14 @@ echo $navegador_mais_utilizado;
         </div>
 
         <div class="blocos" id="perguntas" onclick="perguntas(1)">
-          Perguntas e Respostas
+          Criar Pergunta e Respostas
+        </div>
+
+        <div class="blocos" id="perguntas" onclick="visualizarperguntas(1)">
+          Visualizar Pergunta e Respostas
         </div>
 
         <div class="blocos">
-
-        </div>
-        <div class="blocos">
-
-        
             <div id="voltar" onclick=sair(1) class="botoesair">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
         </div>

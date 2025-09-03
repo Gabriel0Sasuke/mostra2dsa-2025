@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --tabela para as perguntas que serão feitas
 CREATE TABLE IF NOT EXISTS `perguntas`(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    texto_pergunta VARCHAR(255) NOT NULL,
+    texto_pergunta VARCHAR(150) NOT NULL,
     filme_associado VARCHAR(100) NOT NULL,
     nivel_dificuldade INT NOT NULL
 );

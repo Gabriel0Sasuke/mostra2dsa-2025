@@ -45,3 +45,15 @@ function perguntas(abrir_fechar){
         document.getElementById('perguntafixed').style.display = 'none';
     }
 }
+function visualizarperguntas(abrir_fechar){
+    if (abrir_fechar === 1) {
+        document.getElementById('visualizarpergunta').style.display = 'flex';
+}else if (abrir_fechar === 2) {
+        document.getElementById('visualizarpergunta').style.display = 'none';
+    }
+}
+document.querySelectorAll('.tr-pergunta').forEach(linha => {
+            linha.addEventListener('click', () => {
+                linha.nextElementSibling.classList.toggle('hidden');
+            });
+        });
