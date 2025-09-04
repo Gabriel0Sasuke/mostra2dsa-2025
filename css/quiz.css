@@ -1,11 +1,22 @@
-
 @font-face {
     font-family: Horizon;
     src: url(../Fonts/Horizon/gc-horizon-1.ttf);
 }
+
 @font-face {
-    font-family: Bebas_Neue;
-    src: url(../Fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+    font-family: Heading;
+    src: url(../Fonts/heading_now/HeadingNowTrial-16Bold.ttf);
+}
+
+
+@font-face {
+    font-family: Franklin;
+    src: url(../Fonts/ITC_Franklin_Gothic_LT_Medium/ITC_Franklin_Gothic_LT_Medium.otf);
+}
+
+@font-face {
+    font-family: sim;
+    src: url(../Fonts/heading_now/Coisax-Regular.ttf);
 }
 @font-face {
     font-family: Roboto;
@@ -14,107 +25,170 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;     
+    box-sizing: border-box;
 }
 
-main{
-    height: 100vh;
-    width: 100vw;
+body{
     display: flex;
-    flex-direction: column;
-    background: #e0ddcd;
     align-items: center;
+    flex-direction: column;
+    background-color: #e0ddcd;
+    height: 95vh;
+    font-family: Franklin;
 }
 h1{
-    font-family: Horizon;
-    color: white;
-    text-transform: uppercase;
-    font-size: 3em;
-}
-#vidas{
-    width: 30vw;
-    height: 5vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 2vh;
-    font-size: 1.7em;
-    margin-left: -65vw;
+    font-size: 4em;
+    color: #8b0000;
 }
 #pergunta{
-    font-family: Roboto;
-    color: white;
-    font-size: 1.5em;
-    width: 98vw;
-    height: 33vh;
     display: flex;
-    background-color: #8b0000;
-    border: 2px solid transparent;
-    border-radius: 16px;
-    margin-bottom: 3vh;
-    padding: 1vw;
-    text-align: justify;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-left: 2vw;
+    background-color: black;
+    color: #ddc075;
+    font-size: 1.55em;
+    border-radius: 18px;
+    width: 89vw;
+    height: 30vh;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    z-index: 2;
 }
-#respostas-container{
+#respostas{
+    position: absolute;
+    top: 25vh;
+    z-index: 1;
+    height: 57vh;
+    width: 95vw;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    background-color: #8b0000;
+    padding-top: 25vh;
+}
+#coracao{
+    position: absolute;
+    width: 70vw;
+    height: 10vh;
+    bottom: 0;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2.5em;
+}
+.pergunta_s{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
-.resposta{
-    width: 48vw;
-    height: 22vh;
-    background-color: #8b0000;
-    color: white;
-    font-family: Roboto;
-    font-size: 1.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1vw;
-    text-align: center;
-    padding: 1vw;
-    border-radius: 16px;
-    cursor: pointer;
+button{
+    width: 45vw;
+    height: 12.5vh;
+    font-size: 1em;
+    margin-bottom: 3vh;
+    border-radius: 30px;
+    border: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    box-shadow: -5px -5px 8px #fff5;
 }
-#form_nome{
+#faca{
+    position: absolute;
+    left: 0;
+    height: 15vh;
+    width: 30vw;
+    z-index: 3;
+}
+#dete{
+    position: absolute;
+    right: 0;
+    top: 32vh;
+    height: 15vh;
+    width: 30vw;
+    z-index: 3;
+}
+#container_inicial{
     position: fixed;
+    margin-top: 1vh;
+    width: 95vw;
+    height: 90vh;
+    background-color: #8b0000;
+    z-index: 100;
     display: flex;
     flex-direction: column;
+    border: 1px solid transparent;
+    border-radius: 16px;
     align-items: center;
-    height: 40vh;
-    width: 95vw;
-    background-color: azure;
-    z-index: 3;
-    margin-top: 30vh;
-    font-size: 1em;
-    border: solid  2px black;
-    border-radius: 16px;
-    font-family: Roboto;
-    padding: 0 1vw 0 1vw;
-}
-#form_nome input{
-    width: 90vw;
-    height: 7vh;
-    background-color: white;
-    border: solid 2px black;
-    border-radius: 16px;
-    margin-top: 2vh;
-    font-size: 1.2em;
-    text-align: center;
-}
-#form_nome button{
-    width: 90vw;
-    height: 7vh;
-    background-color: #8b0000;
     color: white;
-    border: none;
-    border-radius: 16px;
-    font-size: 1.2em;
-    margin-top: 0vh;
-    cursor: pointer;
+    font-family: Roboto;
+    padding: 1vw 1vh 1vw 1vh;
 }
-#form_nome label{
-    font-size: 2em;
+#container_inicial h1{
+    color: white;
+}
+#container_inicial p{
+    margin-top: 0.5vh;
+    font-size: 1.2em;
+}
+input[type ="text"]{
+    width: 90vw;
+    height: 4vh;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.2em;
+    text-align: left;
+    padding-left: 0.5vw;
+    margin-top: 0.5vh;
+}
+label{
+    font-size: 1.1em;
     margin-top: 2vh;
-    color: black;
+}
+h2{
+    margin-top: 1vh;
+    font-size: 1.5em;
+}
+#btn-submit{
+    width: 90vw;
+    height: 6vh;
+    margin-top: 1vh;
+    font-size: 1.5em;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    background-color: #e0ddcd;
+    color: #8b0000;
+    font-weight: 800;
+}
+form{
+    border-bottom: 3px solid white;
+    height: 20vh;
+}
+#btn_classificacao{
+    width: 90vw;
+    height: 6vh;
+    margin-top: 1vh;
+    margin-bottom: 0;
+}
+#btn_voltar{
+    width: 90vw;
+    height: 6vh;
+    margin-top: 1vh;
+}
+#respostas button.correta {
+    background-color: #28a745; 
+    color: white;
+    border-color: #28a745;
+}
+
+#respostas button.errada {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+#respostas button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
 }

@@ -111,6 +111,7 @@ $perguntas = $sql->query("SELECT * FROM perguntas");
                 <th>PERGUNTA</th>
                 <th>FILME</th>
                 <th>DIFICULDADE</th>
+                <th>AUTOR</th>
                 <th>Ação</th>
               </tr>
 
@@ -119,6 +120,7 @@ $perguntas = $sql->query("SELECT * FROM perguntas");
                 $perguntatexto = $perguntafetch['texto_pergunta'];
                 $perguntafilme = $perguntafetch['filme_associado'];
                 $perguntadificuldade = $perguntafetch['nivel_dificuldade'];
+                $perguntaautor = $perguntafetch['autor_pergunta'];
                 ?>
               <tr class="tr-pergunta">
                 <td><?php  echo $perguntaid ?></td>
@@ -135,6 +137,7 @@ $perguntas = $sql->query("SELECT * FROM perguntas");
                  }
                  ?>
                  </td>
+                 <td><?php echo $perguntaautor ?></td>
                 <td><a href="excluir_pergunta.php?id=<?php echo $perguntaid?>">Excluir</a></td>
               </tr>
               <?php
@@ -142,7 +145,7 @@ $perguntas = $sql->query("SELECT * FROM perguntas");
 
               ?>
               <tr class="tr-detalhes hidden">
-                <td colspan="5" class="td-detalhes">                    
+                <td colspan="6" class="td-detalhes">                    
                     <table class="sub-table">
                         <tr>
                             <th>ID</th>

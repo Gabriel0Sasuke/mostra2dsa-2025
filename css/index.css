@@ -2,86 +2,143 @@
     font-family: Horizon;
     src: url(../Fonts/Horizon/gc-horizon-1.ttf);
 }
+
 @font-face {
-    font-family: Bebas_Neue;
-    src: url(../Fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+    font-family: Heading;
+    src: url(../Fonts/heading_now/HeadingNowTrial-16Bold.ttf);
 }
+
+
 @font-face {
-    font-family: Roboto;
-    src: url(../Fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf);
+    font-family: Franklin;
+    src: url(../Fonts/ITC_Franklin_Gothic_LT_Medium/ITC_Franklin_Gothic_LT_Medium.otf);
 }
-*{
+
+@font-face {
+    font-family: sim;
+    src: url(../Fonts/heading_now/Coisax-Regular.ttf);
+}
+
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;     
+    box-sizing: border-box;
 }
-#centraliza{
-    height: 100vh;
-    width: 100vw;
+
+body {
     display: flex;
-    flex-direction: column;
-    background: radial-gradient(circle at 50% 50%, #1a1a1a, #000000);
-    align-items: center;
-}
-#name_space{
-    background-color: #8b0000;
-    padding-top: 1vh;
-    color: #ddbf74;
-    display: flex;
-    text-transform: uppercase;
-    margin-top: 3vh;
-    width: 80vw;
-    height: auto;
-    text-align: center;
-    font-size: 4.5em;
-    border-radius: 30px;
-    font-family: Horizon;
-    line-height: 17vh;
-}
-img{
-    width: 24vw;
-    height: auto;
-    margin-top: 15vh;
-    right: 18vw;
-    position: absolute;
-    filter: brightness(0);
-}
-.button{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-a{
-    background-color: black;
-    color: white;
-    border: none;
-    font-family: Bebas_Neue;
-    font-size: 2.3em;
-    height: 15vh;
-    width: 55vw;
-    border-radius: 30px;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: black;
+    flex-direction: column;
+    height: 95vh;
+}
+
+main {
+    background-color: #8b0000;
+    font-family: Franklin;
+    height: 75vh;
+    width: 95vw;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: 1vh;
+}
+
+#title img {
+    top: 4vh;
+    height: 20vh;
+    width: 70vw;
+    z-index: 1;
+    position: absolute;
+}
+
+#title #txt {
+    font-size: 6em;
+    color: #ddc075;
+    font-weight: 500;
+    text-transform: lowercase;
+    display: flex;
+    font-family: sim;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: -5px;
+    word-spacing: -7px;
+}
+
+#title {
+    width: 100%;
+    height: 20vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sub-title {
+    font-size: 2.25em;
     text-align: center;
-    border: solid 2px transparent;
+    color: #ddc075;
+    font-weight: bold;
 }
-a:last-child{
-    font-size: 2em;
+
+#btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 45vh;
 }
-#sala{
+
+.btn {
+    background-color: black;
     color: #eaeaea;
-    text-transform: uppercase;
-    font-family: Horizon;
-    font-size: 2em;
-    margin-left: -80vw;
-}
-#down{
-    color:#ddbf74;
-    font-size: 1em;
+    height: 12vh;
+    width: 50vw;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    border-radius: 30px;
     text-transform: uppercase;
+    font-weight: bold;
+    font-style: italic;
 }
+
+#knif img {
+    height: 12vh;
+    width: 25vw;
+    position: absolute;
+    z-index: 2;
+}
+
+#detetive img {
+    height: 25vw;
+    width: 25vw;
+    position: absolute;
+    right: 0;
+    top: 15vh;
+    filter: brightness(0);
+}
+
+footer {
+    color: #ddc075;
+    font-family: Franklin;
+    text-transform: uppercase;
+    font-size: 1.30em;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 2vh;
+}
+
+#pe {
+    font-size: .90em;
+    font-weight: normal;
+}
+
+#sala {
+    font-size: 2em;
+    color: #e0ddcd;
+    letter-spacing: -2px;
+}
+

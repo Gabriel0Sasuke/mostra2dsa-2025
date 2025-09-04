@@ -342,8 +342,9 @@ td{
 }
 table th:nth-child(1) { width: 5%; font-size: 0.5em;}   /* Coluna ID */
 table th:nth-child(2) { width: 50%; font-size: 1em;}  /* Coluna PERGUNTA */
-table th:nth-child(3) { width: 17.5%; font-size: 0.5em;}  /* Coluna FILME ASSOCIADO */
-table th:nth-child(4) { width: 17.5%; font-size: 0.5em;}  /* Coluna DIFICULDADE */
+table th:nth-child(3) { width: 12.5%; font-size: 0.5em;}  /* Coluna FILME ASSOCIADO */
+table th:nth-child(4) { width: 12.5%; font-size: 0.5em;}  /* Coluna DIFICULDADE */
+table th:nth-child(5) { width: 10%; font-size: 0.5em;}  /* Coluna AUTOR */
 table th:nth-child(6) { width: 10%; font-size: 0.5em;}  /* Coluna AÇÕES */
 
 .tr-pergunta { 
