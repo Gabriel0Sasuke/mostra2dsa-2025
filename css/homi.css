@@ -12,53 +12,61 @@
     font-family: Roboto;
     src: url(../Fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf);
 }
+@font-face {
+    font-family: Franklin;
+    src: url(../Fonts/ITC_Franklin_Gothic_LT_Medium/ITC_Franklin_Gothic_LT_Medium.otf);
+}
+@font-face {
+    font-family: opensans;
+    src: url(../Fonts/OpenSans/OpenSans-Regular.ttf);
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #eaeaea;
 }
-
-main {
-    height: 100vh;
-    width: 100vw;
+body{
     display: flex;
     flex-direction: column;
-    background: radial-gradient(circle at 50% 50%, #1a1a1a, #000000);
-    font-family: Bebas_Neue;
-    font-size: 1.75em;
-    padding: 3vw 2vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #8b0000;
 }
 h1{
-    text-align: center;
-}
-#image img {
-    width: 40vw;
-    height: 30vh;
-    margin-right: 2vw;
-}
+    color: #ddc075;
+    font-family: Franklin;
+    text-transform: uppercase;
+    font-size: 9vw;
+    text-wrap: nowrap;
 
-#text1 {
-    font-family: Roboto;
-    font-size: .5em;
-    margin-left: auto;
 }
-
-#text2 {
-    font-family: Roboto;
-    font-size: .5em;
-    margin-left: auto;
+#sobre{
+    background-color: #e0ddcd;
+    width: 95vw;
+    font-family: opensans;
+    padding: 1vh 0 2vh 2vw;
+    text-align: left;
+    font-size: 3.75vw;
 }
-
-#hit {
+#lado{
     display: flex;
-    flex-direction: row;
 }
-#button{
-    background-color: red;
-    height: 5vh;
-    width: 20vw;
-    display: flex;
-    left: 0;
+#cara{
+    width: 48vw;
+    height: 48vw;
+    border-radius: 10px;
+    margin-bottom: .5vh;
+    margin-right: 1vw;
+}
+#bio{
+    font-weight: 600;
+    font-size: 1.5em;
+}
+#birdu{
+    position: relative;
+    height: 15vw;
+    height: 15vw;
+    right: -37vw;
+    bottom: 4vh;
 }
