@@ -22,6 +22,10 @@
     </div>
     <img id="birdu" src="../../images/birdu.png" alt="">
     </div>
+    <div id="botoes">
+        <button><p>VOLTAR AO INICIO</p></button>
+        <button><p>SUAS OBRAS</p></button>
+    </div>
 </body>
 
 </html>

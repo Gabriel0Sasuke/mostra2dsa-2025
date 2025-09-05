@@ -32,6 +32,7 @@ body{
     justify-content: center;
     align-items: center;
     background-color: #8b0000;
+    font-size: 2.5vw;
 }
 h1{
     color: #ddc075;
@@ -47,7 +48,7 @@ h1{
     font-family: opensans;
     padding: 1vh 0 2vh 2vw;
     text-align: left;
-    font-size: 3.75vw;
+    font-size: 1.52em;
 }
 #lado{
     display: flex;
@@ -61,7 +62,7 @@ h1{
 }
 #bio{
     font-weight: 600;
-    font-size: 1.5em;
+    font-size: 2.2em;
 }
 #birdu{
     position: relative;
@@ -69,4 +70,22 @@ h1{
     height: 15vw;
     right: -37vw;
     bottom: 4vh;
+}
+#botoes p{
+    font-family: Franklin;
+    font-weight: bold;
+    font-size: 3.5em;
+    color: white;
+}
+#botoes button{
+    width: 37vw;
+    height: 7vh;
+    background-color: black;
+    border-radius: 60px;
+}
+#botoes{
+    width: 95vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
