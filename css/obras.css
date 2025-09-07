@@ -1,0 +1,91 @@
+@font-face {
+    font-family: Franklin;
+    src: url(../Fonts/ITC_Franklin_Gothic_LT_Medium/ITC_Franklin_Gothic_LT_Medium.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Franklin;
+}
+
+body {
+    background-color: black;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    font-size: 11vw;
+    color: #ddc075;
+    margin: 2vh 0 2vh 0;
+}
+
+#fundo {
+    background-color: #e0ddcd;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 5vh 6vw 5vh 6vw;
+    height: 60vh;
+}
+
+#fundo img {
+    height: 35vw;
+    width: 35vw;
+    border-radius: 10px;
+}
+
+.tela {
+    height: 22.5vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #8b0000;
+    border: none;
+    border-radius: 30px;
+}
+
+.tela p {
+    font-size: 2em;
+}
+
+#faka {
+    position: absolute;
+    height: 20vw;
+    width: 20vw;
+    left: 0vw;
+    top: 10vh;
+}
+
+#passaru {
+    position: absolute;
+    height: 6vh;
+    width: 23vw;
+    right: 2vw;
+    bottom: 25vh;
+}
+
+#back{
+    border: none;
+    background-color: #8b0000;
+    font-size: 7vw;
+    width: 30vw;
+    height: 7vh;
+    font-family: Franklin;
+    font-weight: bold;
+    color: white;
+    border-radius: 20px;
+    margin-top: 3vh;
+}
+
+#tela2 img {
+    height: 36vw;
+}

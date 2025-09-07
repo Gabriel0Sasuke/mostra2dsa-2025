@@ -41,9 +41,9 @@ exit();
             <img src="images/detetive.png" onclick="admin()">
         </div>
         <div id="btns">
-            <div class="btn" id="btn1" onclick="window.location ='PHP/quiz/quiz.php'">Quiz</div>
-            <div class="btn" id="btn2" onclick="window.location ='PHP/makeoff/sobre.php'">Makeoff</div>
-            <div class="btn" id="btn3" onclick="window.location ='PHP/sobre/hitchcock.php'">Sobre Hitchcock</div>
+            <button class="btn" id="btn1" onclick="window.location ='PHP/quiz/quiz.php'"><p>Quiz</p></button>
+            <button class="btn" id="btn2" onclick="window.location ='PHP/makeoff/sobre.php'"><p>Makeoff</p></button>
+            <button class="btn" id="btn3" onclick="window.location ='PHP/sobre/hitchcock.php'"><p>Sobre Hitchcock</p></button>
         </div>
     </main>
     <footer>

@@ -38,9 +38,9 @@ h1{
     color: #ddc075;
     font-family: Franklin;
     text-transform: uppercase;
-    font-size: 9vw;
+    font-size: 11.25vw;
     text-wrap: nowrap;
-
+    margin: 3vh 0 3vh 0;
 }
 #sobre{
     background-color: #e0ddcd;
@@ -54,15 +54,15 @@ h1{
     display: flex;
 }
 #cara{
-    width: 48vw;
-    height: 48vw;
+    width: 50vw;
+    height: 50vw;
     border-radius: 10px;
     margin-bottom: .5vh;
     margin-right: 1vw;
 }
 #bio{
     font-weight: 600;
-    font-size: 2.2em;
+    font-size: 2em;
 }
 #birdu{
     position: relative;
@@ -74,14 +74,15 @@ h1{
 #botoes p{
     font-family: Franklin;
     font-weight: bold;
-    font-size: 3.5em;
+    font-size: 1.5em;
     color: white;
 }
 #botoes button{
-    width: 37vw;
-    height: 7vh;
+    width: 39vw;
+    height: 9vh;
     background-color: black;
     border-radius: 60px;
+    border: none;
 }
 #botoes{
     width: 95vw;

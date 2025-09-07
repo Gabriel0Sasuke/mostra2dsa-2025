@@ -23,8 +23,8 @@
     <img id="birdu" src="../../images/birdu.png" alt="">
     </div>
     <div id="botoes">
-        <button><p>VOLTAR AO INICIO</p></button>
-        <button><p>SUAS OBRAS</p></button>
+        <button onclick="window.location='../../index.php'"><p>VOLTAR AO INICIO</p></button>
+        <button onclick="window.location='obras.php'"><p>SUAS OBRAS</p></button>
     </div>
 </body>
 

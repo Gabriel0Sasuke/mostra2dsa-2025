@@ -89,20 +89,25 @@ main {
     height: 45vh;
 }
 
-.btn {
+.btn{
     background-color: black;
     color: #eaeaea;
     height: 12vh;
     width: 50vw;
-    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2em;
+    font-size: 1.75em;
     border-radius: 30px;
+
+}
+button, p{
+    border: none;
     text-transform: uppercase;
     font-weight: bold;
     font-style: italic;
+    text-align: center;
+    
 }
 
 #knif img {
