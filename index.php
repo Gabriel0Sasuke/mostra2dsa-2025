@@ -15,17 +15,15 @@ $_SESSION['acesso'] = true;
 header("Location: index.php");
 exit();
 }
-?>
-<?php
+
 $user_agent = $_SERVER['HTTP_USER_AGENT'];
 
 if (!preg_match('/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i', $user_agent)) {
   // Redireciona para uma página de erro
-  header('Location: https://www.youtube.com/watch?v=dgUHE8wWhiE');
+  header('Location: html/erro.html');
   exit();
 }
 
-// O código do seu site vai aqui
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

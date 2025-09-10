@@ -23,7 +23,7 @@ h1{
     color: #ddc075;
 }
 #red{
-    height: 80vh;
+    height: auto;
     width: 95vw;
     background-color: #8b0000;
     display: flex;
@@ -38,8 +38,8 @@ h1{
     width: 100%;
 }
 .producao img{
-    height: 50vw;
-    width: 50vw;
+    height: 30vw;
+    width: 30vw;
     margin: 6vw;
     border-radius: 20px;
 }

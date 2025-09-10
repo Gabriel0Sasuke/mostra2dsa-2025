@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $perguntas = $sql->query("SELECT * FROM perguntas");
+$imagens = $sql->query("SELECT * FROM makeoff");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -94,8 +95,6 @@ $perguntas = $sql->query("SELECT * FROM perguntas");
                 <tr>
                   <th>ID</th>
                   <th>PERGUNTA</th>
-                  <th>FILME</th>
-                  <th>DIFICULDADE</th>
                   <th>AUTOR</th>
                   <th>Ação</th>
                 </tr>
@@ -103,25 +102,11 @@ $perguntas = $sql->query("SELECT * FROM perguntas");
               <?php while ($perguntafetch = $perguntas->fetch_array()) {
                 $perguntaid = $perguntafetch['id'];
                 $perguntatexto = $perguntafetch['texto_pergunta'];
-                $perguntafilme = $perguntafetch['filme_associado'];
-                $perguntadificuldade = $perguntafetch['nivel_dificuldade'];
                 $perguntaautor = $perguntafetch['autor_pergunta'];
                 ?>
                   <tr class="tr-pergunta">
                     <td><?php echo $perguntaid ?></td>
                     <td><?php echo $perguntatexto ?></td>
-                    <td><?php echo $perguntafilme ?></td>
-                    <td>
-                      <?php
-                      if ($perguntadificuldade == 1) {
-                        echo "Fácil";
-                      } else if ($perguntadificuldade == 2) {
-                        echo "Médio";
-                      } else if ($perguntadificuldade == 3) {
-                        echo "Difícil";
-                      }
-                      ?>
-                    </td>
                     <td><?php echo $perguntaautor ?></td>
                     <td><a href="excluir_pergunta.php?id=<?php echo $perguntaid ?>">Excluir</a></td>
                   </tr>
@@ -167,27 +152,57 @@ $perguntas = $sql->query("SELECT * FROM perguntas");
         </div>
 
         <div id="inseririmagem">
-            <h2>Vamos adicionar o making of</h2>
-            <form action="imagens.php" method="post" id="arrumando_coisax">
-              <input type="file" name="imagem">
-              grupo:
-              <select name="" id="">
-                <option value="" hidden>dasdsa</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-              </select>
-              Legenda:<input type="text">
-            </form>
+          <div id="titulo">Making of</div>
+          <form action="imgens.php" method="post" id="arrumando_coisax" enctype="multipart/form-data">
+            <p>Imagem:</p>
+            <input type="file" name="imagem" class="size" required>
+            <p id="erro">Grupo:</p>
+            <select name="grupo" id="" class="size" required>
+              <option value="" hidden>Selecione:</option>
+              <option value="Parede TNT">Parede TNT</option>
+              <option value="Vídeo">Vídeo</option>
+              <option value="Espaço comida">Espaço comida</option>
+              <option value="Parede interna">Parede interna</option>
+              <option value="Parede externa">Parede externa</option>
+              <option value="Personagem">Personagem</option>
+              <option value="Comida">Comida</option>
+              <option value="Porta">Porta</option>
+              <option value="Portfólio">Portfólio</option>
+              <option value="Pôster">Pôster</option>
+            </select>
+            <p>Legenda:</p> <textarea name="legenda" id="legenda" class="size" maxlength="255" required></textarea>
+            <button type="submit" id="submit">Adicionar Imagem</button>
+          </form>
           <button onclick="inseririmagens(2)">Voltar</button>
         </div>
-
+        <div id="visualizarimagem">
+          <div>
+          <div id="titulo">Visualizar Imagem</div>
+            <table>
+              <tr>
+              <th>ID</th>
+              <th>Imagem</th>
+              <th>Grupo</th>
+              <th>Legenda</th>
+              <th>Autor</th>
+              <th>Ação</th>
+            <?php
+            while ($row_imagem = $imagens->fetch_array()) { ?>
+              <tr>
+                    <td><?php echo $row_imagem['id']; ?></td>
+                    <td><img src='../../<?php echo $row_imagem['caminho_arquivo']; ?>' alt='Imagem' id='size_img'/></td>
+                    <td><?php echo $row_imagem['grupo']; ?></td>
+                    <td><?php echo $row_imagem['legenda']; ?></td>
+                    <td><?php echo $row_imagem['autor']; ?></td>
+                    <td><a href="excluir.php?id=<?php echo $row_imagem['id']; ?>">Excluir</a></td>
+              <tr>
+              <?php }
+            ?>
+            </tr>
+          </table>
+        </div>
+          <button id="volte" onclick="visualizarimagens(2)">Voltar</button>
+        </div>
         <div class="blocos" id="bloco1">
 
           <div class="infos">Número de Visitas
@@ -232,6 +247,9 @@ $perguntas = $sql->query("SELECT * FROM perguntas");
 
         <div class="blocos" id="perguntas" onclick="inseririmagens(1)">
           Inserir Imagens do Making Of
+        </div>
+        <div class="blocos" id="perguntas" onclick="visualizarimagens(1)">
+          Visualizar Imagens do Making Of
         </div>
 
         <div class="blocos">

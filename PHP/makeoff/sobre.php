@@ -15,25 +15,127 @@ $result = $conn->query($sql);
 
 <body>
     <h1>Making of</h1>
+
     <div id="red">
-        <div id="parede_externa">
-            <h2>Parede Externa</h2>
+        <div id="Parede TNT">
+            <h2>Parede TNT</h2>
             <div class="producao">
                 <?php
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        if ($row['grupo'] == "Parede Externa") {
-                            echo "<img src='$row[caminho_arquivo]'>";
+                        if ($row['grupo'] == "Parede TNT") {
+                            echo "<img src='../../$row[caminho_arquivo]'>";
                         }
                     }
                 } else {
                     echo "não há imagem desse grupo";
                 }
                 ?>
-                <img src="../../images/birdu.png" alt="">
             </div>
         </div>
-        <div id="porta">
+        <div id="Vídeo">
+            <h2>Vídeo</h2>
+            <div class="producao">
+
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        if ($row['grupo'] == "Vídeo") {
+                            echo "<img src='../../$row[caminho_arquivo]'>";
+                        }
+                    }
+                } else {
+                    echo "não há imagem desse grupo";
+                }
+                ?>
+            </div>
+        </div>
+        <div id="Espaço comida">
+            <h2>Espaço comida</h2>
+            <div class="producao">
+
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        if ($row['grupo'] == "Espaço comida") {
+                            echo "<img src='../../$row[caminho_arquivo]'>";
+                        }
+                    }
+                } else {
+                    echo "não há imagem desse grupo";
+                }
+                ?>
+            </div>
+        </div>
+        <div id="Parede interna">
+            <h2>Parede interna</h2>
+            <div class="producao">
+
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        if ($row['grupo'] == "Parede interna") {
+                            echo "<img src='../../$row[caminho_arquivo]'>";
+                        }
+                    }
+                } else {
+                    echo "não há imagem desse grupo";
+                }
+                ?>
+            </div>
+        </div>
+        <div id="Parede externa">
+            <h2>Parede externa</h2>
+            <div class="producao">
+
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        if ($row['grupo'] == "Parede externa") {
+                            echo "<img src='../../$row[caminho_arquivo]'>";
+                        }
+                    }
+                } else {
+                    echo "não há imagem desse grupo";
+                }
+                ?>
+            </div>
+        </div>
+        <div id="Personagem">
+            <h2>Personagem</h2>
+            <div class="producao">
+
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        if ($row['grupo'] == "Personagem") {
+                            echo "<img src='../../$row[caminho_arquivo]'>";
+                        }
+                    }
+                } else {
+                    echo "não há imagem desse grupo";
+                }
+                ?>
+            </div>
+        </div>
+        <div id="Comida">
+            <h2>Comida</h2>
+            <div class="producao">
+
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        if ($row['grupo'] == "Comida") {
+                            echo "<img src='../../$row[caminho_arquivo]'>";
+                        }
+                    }
+                } else {
+                    echo "não há imagem desse grupo";
+                }
+                ?>
+            </div>
+        </div>
+        <div id="Porta">
             <h2>Porta</h2>
             <div class="producao">
 
@@ -41,140 +143,43 @@ $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         if ($row['grupo'] == "Porta") {
-                            echo "<img src='$row[caminho_arquivo]'>";
+                            echo "<img src='../../$row[caminho_arquivo]'>";
                         }
                     }
                 } else {
                     echo "não há imagem desse grupo";
                 }
                 ?>
-                <img src="../../images/birdu.png" alt="">
             </div>
         </div>
-        <div id="parede_interna">
-            <h2>Parede Interna</h2>
+        <div id="Portfólio">
+            <h2>Portfólio</h2>
             <div class="producao">
 
                 <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        if ($row['grupo'] == "Parede Interna") {
-                            echo "<img src='$row[caminho_arquivo]'>";
-                        }
+                while ($row = $result->fetch_assoc()) {
+                    if ($row['grupo'] == "Portfólio") {
+                        echo "<img src='../../$row[caminho_arquivo]'>";
+                    } else {
+                        echo "não há imagem desse grupo";
                     }
-                } else {
-                    echo "não há imagem desse grupo";
                 }
                 ?>
-                <img src="../../images/birdu.png" alt="">
             </div>
         </div>
-        <div id="parede_tnt">
-            <h2>Porta</h2>
+        <div id="Pôster">
+            <h2>Pôster</h2>
             <div class="producao">
 
                 <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        if ($row['grupo'] == "Parede de TNT") {
-                            echo "<img src='$row[caminho_arquivo]'>";
-                        }
+                while ($row = $result->fetch_assoc()) {
+                    if ($row['grupo'] == "Pôster") {
+                        echo "<img src='../../$row[caminho_arquivo]'>";
+                    } else {
+                        echo "não há imagem desse grupo";
                     }
-                } else {
-                    echo "não há imagem desse grupo";
                 }
                 ?>
-                <img src="../../images/birdu.png" alt="">
-            </div>
-        </div>
-        <div id="">
-            <h2>Porta</h2>
-            <div class="producao">
-
-                <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        if ($row['grupo'] == "Porta") {
-                            echo "<img src='$row[caminho_arquivo]'>";
-                        }
-                    }
-                } else {
-                    echo "não há imagem desse grupo";
-                }
-                ?>
-                <img src="../../images/birdu.png" alt="">
-            </div>
-        </div>
-        <div id="p_porta">
-            <h2>Porta</h2>
-            <div class="producao">
-
-                <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        if ($row['grupo'] == "Porta") {
-                            echo "<img src='$row[caminho_arquivo]'>";
-                        }
-                    }
-                } else {
-                    echo "não há imagem desse grupo";
-                }
-                ?>
-                <img src="../../images/birdu.png" alt="">
-            </div>
-        </div>
-        <div id="p_porta">
-            <h2>Porta</h2>
-            <div class="producao">
-
-                <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        if ($row['grupo'] == "Porta") {
-                            echo "<img src='$row[caminho_arquivo]'>";
-                        }
-                    }
-                } else {
-                    echo "não há imagem desse grupo";
-                }
-                ?>
-                <img src="../../images/birdu.png" alt="">
-            </div>
-        </div>
-        <div id="p_porta">
-            <h2>Porta</h2>
-            <div class="producao">
-
-                <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        if ($row['grupo'] == "Porta") {
-                            echo "<img src='$row[caminho_arquivo]'>";
-                        }
-                    }
-                } else {
-                    echo "não há imagem desse grupo";
-                }
-                ?>
-                <img src="../../images/birdu.png" alt="">
-            </div>
-        </div>
-        <div id="p_porta">
-            <h2>Porta</h2>
-            <div class="producao">
-
-                <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        if ($row['grupo'] == "Porta") {
-                            echo "<img src='$row[caminho_arquivo]'>";
-                        }
-                    }
-                } else {
-                    echo "não há imagem desse grupo";
-                }
-                ?>
-                <img src="../../images/birdu.png" alt="">
             </div>
         </div>
     </div>

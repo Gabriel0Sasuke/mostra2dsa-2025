@@ -59,6 +59,13 @@ function inseririmagens(abrir_fechar){
         document.getElementById('inseririmagem').style.display = 'none';
     }
 }
+function visualizarimagens(abrir_fechar){
+    if (abrir_fechar === 1) {
+        document.getElementById('visualizarimagem').style.display = 'flex';
+}else if (abrir_fechar === 2) {
+        document.getElementById('visualizarimagem').style.display = 'none';
+    }
+}
 document.querySelectorAll('.tr-pergunta').forEach(linha => {
             linha.addEventListener('click', () => {
                 linha.nextElementSibling.classList.toggle('hidden');

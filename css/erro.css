@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: Bebas-neue;
+    src: url(../Fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+@font-face {
+    font-family: Open-Sans;
+    src: url(../Fonts/OpenSans/OpenSans-Regular.ttf);
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: #ddc075;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: Open-Sans;
+}
+div{
+    width: 60vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #8b0000;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    font-size: 1.3em;
+}
+img{
+    width: 20vw;
+    filter: brightness(00);
+    height: auto;
+}
+p{
+    margin-top: 0.5vh;
+}
+button{
+    width: 30vw;
+    height: 7vh;
+    font-size: 0.8em;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    margin-top: 2vh;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    font-family: Open-Sans;
+}
+button:hover{
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+}
