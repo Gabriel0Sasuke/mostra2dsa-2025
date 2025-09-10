@@ -1,10 +1,9 @@
 <?php
 session_start();
+require_once __DIR__ . '/../../include/conn.php';
 $senhaadmin = 'b&st2nds@!';
 $nomeadmin = $_SESSION['nomeadmin'] ?? null;
 $loginadmin = $_SESSION['loginadmin'] ?? null;
-
-$sql = new mysqli('localhost', 'root', '', 'mostra2025');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $_SESSION['nomeadmin'] = $_POST['nome'];
@@ -14,8 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   exit();
 }
 
-$perguntas = $sql->query("SELECT * FROM perguntas");
-$imagens = $sql->query("SELECT * FROM makeoff");
+$perguntas = $conn->query("SELECT * FROM perguntas");
+$imagens = $conn->query("SELECT * FROM makeoff");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -111,7 +110,7 @@ $imagens = $sql->query("SELECT * FROM makeoff");
                     <td><a href="excluir_pergunta.php?id=<?php echo $perguntaid ?>">Excluir</a></td>
                   </tr>
                   <?php
-                  $respostas = $sql->query("SELECT * FROM respostas WHERE id_pergunta = $perguntaid");
+                  $respostas = $conn->query("SELECT * FROM respostas WHERE id_pergunta = $perguntaid");
 
                   ?>
                   <tr class="tr-detalhes hidden">
@@ -208,7 +207,7 @@ $imagens = $sql->query("SELECT * FROM makeoff");
           <div class="infos">Número de Visitas
             <div>
               <?php
-              $numero_acessos = $sql->query("SELECT COUNT(*) as total FROM acessos")->fetch_assoc()['total'];
+              $numero_acessos = $conn->query("SELECT COUNT(*) as total FROM acessos")->fetch_assoc()['total'];
               echo $numero_acessos;
               ?>
             </div>
@@ -217,13 +216,7 @@ $imagens = $sql->query("SELECT * FROM makeoff");
           <div class="infos">Navegador mais Utilizado
             <div>
               <?php
-              $navegador_mais_utilizado = $sql->query("
-    SELECT navegador, COUNT(*) as total 
-    FROM acessos 
-    GROUP BY navegador 
-    ORDER BY total DESC 
-    LIMIT 1
-")->fetch_assoc()['navegador'];
+              $navegador_mais_utilizado = $conn->query("SELECT navegador, COUNT(*) as total FROM acessos GROUP BY navegador ORDER BY total DESC LIMIT 1")->fetch_assoc()['navegador'];
 
               // Limitar a quantidade de caracteres
               $max = 70; // ajuste o número conforme precisar

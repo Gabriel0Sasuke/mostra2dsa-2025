@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `acessos`(
 -- (Opcional) consultas rápidas
 -- select * from perguntas;
 -- select * from respostas;
-select * from tabela
+-- select * from tabela
 -- CUIDADO: comentar para não apagar ao executar o script inteiro
 -- drop table acessos;
 -- drop table makeoff;

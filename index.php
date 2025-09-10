@@ -1,13 +1,14 @@
 <?php
 session_start();
-$sql = new mysqli('localhost', 'root', '', 'mostra2025');
+require_once __DIR__ . '/include/conn.php';
+
 
 if (!isset($_SESSION['acesso']) || $_SESSION['acesso'] === false){
 $ip = $_SERVER['REMOTE_ADDR'];
 $navegador = $_SERVER['HTTP_USER_AGENT'];
 
 // Registrar acesso
-$stmt = $sql->prepare("INSERT INTO acessos (navegador, ip) VALUES (?, ?)");
+$stmt = $conn->prepare("INSERT INTO acessos (navegador, ip) VALUES (?, ?)");
 $stmt->bind_param("ss", $navegador, $ip);
 $stmt->execute();
 $stmt->close();

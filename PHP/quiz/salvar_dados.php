@@ -1,22 +1,17 @@
 <?php
 session_start();
-if ($_SESSION['enviado_ao_servidor'] === false) {
-    $nome = $_SESSION['nome'];
-    $pontuacao = $_SESSION['pontuacao'];
-    $tempo_segundos = $_SESSION['tempo_segundos'];
-
-    $conn = new mysqli('localhost', 'root', '', 'mostra2025');
-
-    $sql = "INSERT INTO tabela (nome, pontuacao, tempo_gasto_segundos) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sii", $nome, $pontuacao, $tempo_segundos);
-    $stmt->execute();
-
-    $stmt->close();
-    $conn->close();
-
-    $_SESSION['enviado_ao_servidor'] = true;
+require_once __DIR__ . '/../../include/conn.php';
+if (isset($_SESSION['enviado_ao_servidor']) && $_SESSION['enviado_ao_servidor'] === false) {
+    $nome = $_SESSION['nome'] ?? '';
+    $pontuacao = (int)($_SESSION['pontuacao'] ?? 0);
+    $tempo_segundos = (int)($_SESSION['tempo_segundos'] ?? 0);
+    if ($stmt = $conn->prepare("INSERT INTO tabela (nome, pontuacao, tempo_gasto_segundos) VALUES (?, ?, ?)")) {
+        $stmt->bind_param("sii", $nome, $pontuacao, $tempo_segundos);
+        $stmt->execute();
+        $stmt->close();
+        $_SESSION['enviado_ao_servidor'] = true;
+    }
 }
-    header("Location: quiz.php");
-    exit();
+header('Location: quiz.php');
+exit();
 ?>

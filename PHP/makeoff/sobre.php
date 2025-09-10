@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli('localhost', 'root', '', 'mostra2025');
+require_once __DIR__ . '/../../include/conn.php';
 $sql = "SELECT * FROM makeoff";
 $result = $conn->query($sql);
 ?>

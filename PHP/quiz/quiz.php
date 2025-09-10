@@ -13,18 +13,18 @@ if (!isset($_SESSION['enviado_ao_servidor'])) {
 // Só gera novas perguntas se o usuário já tiver nome e ainda não houver perguntas salvas na sessão
 if (isset($_SESSION['nome'])) {
     if (!isset($_SESSION['perguntas_quiz'])) {
-        $sql = new mysqli('localhost', 'root', '', 'mostra2025');
+        require_once __DIR__ . '/../../include/conn.php';
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-        $sorteio = $sql->query("SELECT ID FROM perguntas ORDER BY RAND() LIMIT 10");
+        $sorteio = $conn->query("SELECT ID FROM perguntas ORDER BY RAND() LIMIT 10");
         if ($sorteio->num_rows > 0) {
             while ($pergunta_row = $sorteio->fetch_assoc()) {
                 $id_pergunta_atual = $pergunta_row['ID'];
-                $stmt_pergunta = $sql->prepare("SELECT texto_pergunta FROM perguntas WHERE id = ?");
+                $stmt_pergunta = $conn->prepare("SELECT texto_pergunta FROM perguntas WHERE id = ?");
                 $stmt_pergunta->bind_param("i", $id_pergunta_atual);
                 $stmt_pergunta->execute();
                 $texto_pergunta = $stmt_pergunta->get_result()->fetch_assoc()['texto_pergunta'];
                 // Embaralha a ordem das respostas a cada montagem de quiz
-                $stmt_respostas = $sql->prepare("SELECT texto_resposta, correta FROM respostas WHERE id_pergunta = ? ORDER BY RAND()");
+                $stmt_respostas = $conn->prepare("SELECT texto_resposta, correta FROM respostas WHERE id_pergunta = ? ORDER BY RAND()");
                 $stmt_respostas->bind_param("i", $id_pergunta_atual);
                 $stmt_respostas->execute();
                 $respostas_result = $stmt_respostas->get_result();

@@ -1,10 +1,6 @@
 <?php
 session_start();
-$sql = new mysqli("localhost", "root", "", "mostra2025");
-
-if ($sql->connect_error) {
-    die("Falha na conexão: " . $sql->connect_error);
-}
+require_once __DIR__ . '/../../include/conn.php';
 
 $pergunta = $_POST['pergunta'] ?? null;
 
@@ -33,17 +29,17 @@ $nome_autor = $_SESSION['nomeadmin'];
 //Inserindo a Pergunta
 
 $sql_pergunta = "INSERT INTO perguntas (texto_pergunta, autor_pergunta) VALUES (?, ?)";
-$stmt_pergunta = $sql->prepare($sql_pergunta);
+$stmt_pergunta = $conn->prepare($sql_pergunta);
 
 $stmt_pergunta->bind_param("ss", $pergunta, $nome_autor);
 
 if ($stmt_pergunta->execute()) {
-    $id_nova_pergunta = $sql->insert_id;
+    $id_nova_pergunta = $conn->insert_id;
 
     //Inserindo as Respostas
 
     $sql_resposta = "INSERT INTO respostas (id_pergunta, texto_resposta, correta) VALUES (?, ?, ?)";
-    $stmt_resposta = $sql->prepare($sql_resposta);
+    $stmt_resposta = $conn->prepare($sql_resposta);
 
     // Resposta 1
     $stmt_resposta->bind_param("isi", $id_nova_pergunta, $resposta1, $resposta1_correta);
@@ -71,6 +67,6 @@ if ($stmt_pergunta->execute()) {
     echo "Erro ao inserir a pergunta: " . $stmt_pergunta->error;
 }
 
-$sql->close();
+$conn->close();
 
 ?>

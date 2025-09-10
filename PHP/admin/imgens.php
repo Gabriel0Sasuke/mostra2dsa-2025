@@ -1,11 +1,6 @@
 <?php
 session_start();
-
-// Conexão com banco
-$sql = new mysqli("localhost", "root", "", "mostra2025");
-if ($sql->connect_error) {
-    die("Falha na conexão: " . $sql->connect_error);
-}
+require_once __DIR__ . '/../../include/conn.php';
 
 // Sanitiza/recebe campos
 $grupo   = trim($_POST['grupo'] ?? '');
@@ -111,10 +106,10 @@ if (!move_uploaded_file($_FILES['imagem']['tmp_name'], $caminhoFisicoFinal)) {
 
 // Inserir registro no banco (tabela makeoff)
 $sqlInsert = "INSERT INTO makeoff (nome_arquivo, caminho_arquivo, grupo, legenda, autor) VALUES (?, ?, ?, ?, ?)";
-$stmt = $sql->prepare($sqlInsert);
+$stmt = $conn->prepare($sqlInsert);
 if (!$stmt) {
     http_response_code(500);
-    echo "Erro prepare: " . $sql->error;
+    echo "Erro prepare: " . $conn->error;
     exit; 
 }
 $stmt->bind_param('sssss', $nomeArquivoFinal, $caminhoPublicoFinal, $grupo, $legenda, $autor);
@@ -128,7 +123,7 @@ if (!$stmt->execute()) {
 $stmt->close();
 
 // Sucesso: redireciona de volta para painel admin
-$sql->close();
+$conn->close();
 header('Location: admin.php?upload=ok');
 exit; 
 ?>
