@@ -371,3 +371,18 @@ table th:nth-child(6) { width: 10%; font-size: 0.5em;}  /* Coluna AÇÕES */
     margin-left: 0;
     font-family: Roboto;
 }
+#inseririmagem{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: #fff;
+    display: none;
+    height: 85vh;
+    z-index: 6;
+}
+#arrumando_coisax{
+    display: flex;
+    flex-direction: column;
+}

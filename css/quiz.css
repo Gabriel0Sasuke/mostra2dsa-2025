@@ -192,3 +192,68 @@ form{
     cursor: not-allowed;
     opacity: 0.7;
 }
+#tela-vitoria{
+    position: fixed;
+    margin-top: 20vh;
+    width: 95vw;
+    height: 60vh;
+    background-color: #8b0000;
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 16px;
+    align-items: center;
+    color: white;
+    font-family: Roboto;
+    padding: 1vw 1vh 1vw 1vh;
+}
+#tela-vitoria h2{
+    margin-top: 1vh;
+    font-size: 2em;
+}
+#tela-vitoria p{
+    margin-top: 1vh;
+    font-size: 1.1em;
+}
+#tela-vitoria button{
+    width: 90vw;
+    margin-bottom: 0;
+    margin-top: 2vh;
+    box-shadow: none;
+}
+#tela-derrota{
+    position: fixed;
+    margin-top: 20vh;
+    width: 95vw;
+    height: 60vh;
+    background-color: #8b0000;
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 16px;
+    align-items: center;
+    color: white;
+    font-family: Roboto;
+    padding: 1vw 1vh 1vw 1vh;
+}
+#tela-derrota h2{
+    margin-top: 1vh;
+    font-size: 2em;
+}
+#tela-derrota p{
+    margin-top: 1vh;
+    font-size: 1.1em;
+}
+#tela-derrota button{
+    width: 90vw;
+    margin-bottom: 0;
+    margin-top: 2vh;
+    box-shadow: none;
+}
+#tempo{
+    margin-top: 50vh;
+    font-size: 1.2em;
+    left: 0;
+}

@@ -16,6 +16,17 @@ header("Location: index.php");
 exit();
 }
 ?>
+<?php
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+if (!preg_match('/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i', $user_agent)) {
+  // Redireciona para uma página de erro
+  header('Location: https://www.youtube.com/watch?v=dgUHE8wWhiE');
+  exit();
+}
+
+// O código do seu site vai aqui
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -42,7 +53,7 @@ exit();
         </div>
         <div id="btns">
             <button class="btn" id="btn1" onclick="window.location ='PHP/quiz/quiz.php'"><p>Quiz</p></button>
-            <button class="btn" id="btn2" onclick="window.location ='PHP/makeoff/sobre.php'"><p>Makeoff</p></button>
+            <button class="btn" id="btn2" onclick="window.location ='PHP/makeoff/sobre.php'"><p>Making of</p></button>
             <button class="btn" id="btn3" onclick="window.location ='PHP/sobre/hitchcock.php'"><p>Sobre Hitchcock</p></button>
         </div>
     </main>

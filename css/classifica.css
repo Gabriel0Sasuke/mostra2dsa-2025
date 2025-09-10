@@ -1,0 +1,91 @@
+@font-face {
+    font-family: franklin;
+    src: url(../Fonts/ITC_Franklin_Gothic_LT_Medium/ITC_Franklin_Gothic_LT_Medium.otf);
+}
+@font-face {
+    font-family: bebas;
+    src: url(../Fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: #ddc075;
+}
+main img{
+    height: 25vw;
+    width: 25vw;
+    position: absolute;
+    left: 2vw;
+}
+#escuro{
+    filter: brightness(0);
+    left: 70vw;
+    top: 10vh;
+    rotate: 5deg;
+}
+main{
+    margin-top: 5vh;
+    background-color: #8b0000;
+    width: 95vw;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    font-size: 18vw;
+    font-family: franklin;
+}
+h2{
+    font-size: 10vw;
+    font-family: bebas;
+    margin-left: -60vw;
+}
+#back{
+    text-transform: uppercase;
+    width: 45vw;
+    height: 7vh;
+    font-size: 5vw;
+    font-family: franklin;
+    background-color: #8b0000;
+    color: #ddc075;
+    border: none;
+    margin-top: 2vh;
+    border-radius: 20px;
+}
+#tabela{
+    width: 90vw;
+    height: 55vh;
+    overflow-y: scroll;
+}
+table{
+    width: 90vw;
+    height: 50vh;
+    background-color: #e0ddcd;
+    font-family: bebas;
+    color: black;
+    border-collapse: collapse;
+    overflow-y: scroll;
+}
+td, th{
+    border: 2px solid black;
+    height: 7vh;
+}
+th{
+    text-align: center;
+}
+td{
+    text-align: center;
+}
+table th:nth-child(1) { width: 10%; font-size: 0.9em;}   /* Coluna Nº */
+table th:nth-child(2) { width: 35%; font-size: 0.9em;}  /* Coluna NOME */
+table th:nth-child(3) { width: 20%; font-size: 0.9em;}  /* Coluna PONTUAÇÃO */
+table th:nth-child(4) { width: 20%; font-size: 0.9em;}  /* Coluna DATA */
+table th:nth-child(5) { width: 15%; font-size: 0.9em;}  /* Coluna TEMPO */

@@ -7,8 +7,6 @@ if ($sql->connect_error) {
 }
 
 $pergunta = $_POST['pergunta'] ?? null;
-$filmeassoc = $_POST['filmeassoc'] ?? null;
-$dificuldade = $_POST['dificuldade'] ?? null;
 
 $resposta1 = $_POST['resposta1'] ?? null;
 $resposta2 = $_POST['resposta2'] ?? null;
@@ -34,10 +32,10 @@ if ($correta == 1) {
 $nome_autor = $_SESSION['nomeadmin'];
 //Inserindo a Pergunta
 
-$sql_pergunta = "INSERT INTO perguntas (texto_pergunta, filme_associado, nivel_dificuldade, autor_pergunta) VALUES (?, ?, ?, ?)";
+$sql_pergunta = "INSERT INTO perguntas (texto_pergunta, autor_pergunta) VALUES (?, ?)";
 $stmt_pergunta = $sql->prepare($sql_pergunta);
 
-$stmt_pergunta->bind_param("ssis", $pergunta, $filmeassoc, $dificuldade, $nome_autor);
+$stmt_pergunta->bind_param("ss", $pergunta, $nome_autor);
 
 if ($stmt_pergunta->execute()) {
     $id_nova_pergunta = $sql->insert_id;
