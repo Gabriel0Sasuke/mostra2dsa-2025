@@ -1,0 +1,87 @@
+@font-face {
+    font-family: Bebas_Neue;
+    src: url(../Fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+@font-face {
+    font-family: opensans;
+    src: url(../Fonts/OpenSans/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: opensans-bold;
+    src: url(../Fonts/OpenSans/open-sans.bold.ttf);
+}
+@font-face {
+    font-family: Franklin;
+    src: url(../Fonts/ITC_Franklin_Gothic_LT_Medium/ITC_Franklin_Gothic_LT_Medium.otf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 95vh;
+}
+h1{
+    color: #ddc075;
+    font-family: Bebas_Neue;
+    font-size: 15vw;
+    margin: 2vh 0 2vh 0;
+}
+#fundo{
+    background-color: #e0ddcd;
+    height: 65vh;
+    width: 90vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2vh;
+}
+#img_fundo{
+    height: 60vw;
+    width: 45vw;
+    background-color: #8b0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin-bottom: 1vh;
+}
+#fundo img{
+    height: 40vw;
+    width: 35vw;
+}
+#image{
+    position: absolute;
+    height: 30vw;
+    width: 30vw;
+    left: 5vw;
+    top: 15vh;
+}
+h2{
+    text-transform: uppercase;
+    font-family: opensans-bold;
+    font-weight: bold;
+}
+#back{
+    border: none;
+    background-color: #8b0000;
+    font-size: 7vw;
+    width: 30vw;
+    height: 7vh;
+    font-family: Franklin;
+    font-weight: bold;
+    color: white;
+    border-radius: 20px;
+    margin-top: 3vh;
+}
+#sinopse{
+    font-family: opensans;
+    font-size: 4vw;
+    padding: 3vw;
+}

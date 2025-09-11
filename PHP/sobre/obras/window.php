@@ -10,12 +10,17 @@
         #fundo{
             padding-bottom: 6vh;
         }
+        #image{
+            filter: brightness(0);
+            height: 20vw;
+            width: 20vw;
+        }
     </style>
 </head>
 
 <body>
     <h1>Janela indiscreta</h1>
-    <img id="image" src="../../../images/faca.png" alt="">
+    <img id="image" src="../../../images/detetive.png" alt="">
     <div id="fundo">
         <div id="img_fundo">
             <img src="../../../images/filmes/janela_indiscreta.jpg" alt="">

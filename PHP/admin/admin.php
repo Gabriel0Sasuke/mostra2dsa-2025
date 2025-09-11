@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../include/conn.php';
-$senhaadmin = 'b&st2nds@!';
+$senhaadmin = 'familiadsa';
 $nomeadmin = $_SESSION['nomeadmin'] ?? null;
 $loginadmin = $_SESSION['loginadmin'] ?? null;
 
@@ -193,7 +193,7 @@ $imagens = $conn->query("SELECT * FROM makeoff");
                     <td><?php echo $row_imagem['grupo']; ?></td>
                     <td><?php echo $row_imagem['legenda']; ?></td>
                     <td><?php echo $row_imagem['autor']; ?></td>
-                    <td><a href="excluir.php?id=<?php echo $row_imagem['id']; ?>">Excluir</a></td>
+                    <td><a href="excluir_imagem.php?id=<?php echo $row_imagem['id']; ?>">Excluir</a></td>
               <tr>
               <?php }
             ?>

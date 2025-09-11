@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../../include/conn.php';
 $sql = "SELECT * FROM makeoff";
 $result = $conn->query($sql);
+$x = 1;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,10 +25,13 @@ $result = $conn->query($sql);
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Parede TNT") {
-                        echo "<img src='../../$row[caminho_arquivo]'>";
-                    } else {
-                        echo "não há imagem desse grupo";
+                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
+                        $x = 0;
                     }
+                }
+                if ($x === 1) {
+                    echo "<p>Esse grupo não tem imagem</p>";
+                    $x = 1;
                 }
                 ?>
             </div>
@@ -40,11 +44,14 @@ $result = $conn->query($sql);
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Vídeo") {
-                        echo "<img src='../../$row[caminho_arquivo]'>";
-                    } else {
-                        echo "não há imagem desse grupo";
+                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
+                        $x = 0;
                     }
                 }
+                if ($x === 1) {
+                    echo "<p>Esse grupo não tem imagem</p>";
+                }
+                $x = 1;
                 ?>
             </div>
         </div>
@@ -56,11 +63,14 @@ $result = $conn->query($sql);
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Espaço comida") {
-                        echo "<img src='../../$row[caminho_arquivo]'>";
-                    } else {
-                        echo "não há imagem desse grupo";
+                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
+                        $x = 0;
                     }
                 }
+                if ($x === 1) {
+                    echo "<p>Esse grupo não tem imagem</p>";
+                }
+                $x = 1;
                 ?>
             </div>
         </div>
@@ -72,11 +82,14 @@ $result = $conn->query($sql);
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Parede interna") {
-                        echo "<img src='../../$row[caminho_arquivo]'>";
-                    } else {
-                        echo "não há imagem desse grupo";
+                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
+                        $x = 0;
                     }
                 }
+                if ($x === 1) {
+                    echo "<p>Esse grupo não tem imagem</p>";
+                }
+                $x = 1;
                 ?>
             </div>
         </div>
@@ -88,11 +101,14 @@ $result = $conn->query($sql);
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Parede externa") {
-                        echo "<img src='../../$row[caminho_arquivo]'>";
-                    } else {
-                        echo "não há imagem desse grupo";
+                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
+                        $x = 0;
                     }
                 }
+                if ($x === 1) {
+                    echo "<p>Esse grupo não tem imagem</p>";
+                }
+                $x = 1;
                 ?>
             </div>
         </div>
@@ -104,11 +120,14 @@ $result = $conn->query($sql);
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Personagem") {
-                        echo "<img src='../../$row[caminho_arquivo]'>";
-                    } else {
-                        echo "não há imagem desse grupo";
+                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
+                        $x = 0;
                     }
                 }
+                if ($x === 1) {
+                    echo "<p>Esse grupo não tem imagem</p>";
+                }
+                $x = 1;
                 ?>
             </div>
         </div>
@@ -120,11 +139,14 @@ $result = $conn->query($sql);
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Comida") {
-                        echo "<img src='../../$row[caminho_arquivo]'>";
-                    } else {
-                        echo "não há imagem desse grupo";
+                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
+                        $x = 0;
                     }
                 }
+                if ($x === 1) {
+                    echo "<p>Esse grupo não tem imagem</p>";
+                }
+                $x = 1;
                 ?>
             </div>
         </div>
@@ -136,11 +158,14 @@ $result = $conn->query($sql);
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Porta") {
-                        echo "<img src='../../$row[caminho_arquivo]'>";
-                    } else {
-                        echo "não há imagem desse grupo";
+                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
+                        $x = 0;
                     }
                 }
+                if ($x === 1) {
+                    echo "<p>Esse grupo não tem imagem</p>";
+                }
+                $x = 1;
                 ?>
             </div>
         </div>
@@ -152,11 +177,14 @@ $result = $conn->query($sql);
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Portfólio") {
-                        echo "<img src='../../$row[caminho_arquivo]'>";
-                    } else {
-                        echo "não há imagem desse grupo";
+                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
+                        $x = 0;
                     }
                 }
+                if ($x === 1) {
+                    echo "<p>Esse grupo não tem imagem</p>";
+                }
+                $x = 1;
                 ?>
             </div>
         </div>
@@ -168,15 +196,19 @@ $result = $conn->query($sql);
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Pôster") {
-                        echo "<img src='../../$row[caminho_arquivo]'>";
-                    } else {
-                        echo "não há imagem desse grupo";
+                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
+                        $x = 0;
                     }
                 }
+                if ($x === 1) {
+                    echo "<p>Esse grupo não tem imagem</p>";
+                }
+                $x = 1;
                 ?>
             </div>
         </div>
     </div>
+    <button id="back" onclick="window.location='../../index.php'">Voltar ao Inicio</button>
 </body>
 
 </html>

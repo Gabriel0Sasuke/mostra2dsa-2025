@@ -2,27 +2,42 @@
     font-family: Bebas_Neue;
     src: url(../Fonts/Bebas_Neue/BebasNeue-Regular.ttf);
 }
+
 @font-face {
     font-family: open;
     src: url(../Fonts/OpenSans/open-sans.bold.ttf);
 }
-*{
+
+@font-face {
+    font-family: openn;
+    src: url(../Fonts/OpenSans/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: Franklin;
+    src: url(../Fonts/ITC_Franklin_Gothic_LT_Medium/ITC_Franklin_Gothic_LT_Medium.otf);
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: black;
 }
-h1{
+
+h1 {
     font-size: 17vw;
     font-family: Bebas_Neue;
     color: #ddc075;
 }
-#red{
+
+#red {
     height: auto;
     width: 95vw;
     background-color: #8b0000;
@@ -30,23 +45,45 @@ h1{
     flex-direction: column;
     overflow: visible;
 }
-.producao{
+
+.producao {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-y: hidden;
     width: 100%;
+    color: #eaeaea;
+    font-size: 1.5em;
+    font-family: openn;
 }
-.producao img{
+
+.producao img {
     height: 30vw;
     width: 30vw;
     margin: 6vw;
     border-radius: 20px;
 }
 
-h2{
+.producao p{
+    margin-left: 5vw;
+}
+
+h2 {
     color: #eaeaea;
     font-family: open;
     margin-left: 5vw;
     font-size: 9vw;
+}
+
+#back {
+    border: none;
+    background-color: #8b0000;
+    font-size: 7vw;
+    width: 40vw;
+    height: 8vh;
+    font-family: Franklin;
+    font-weight: bold;
+    color: white;
+    border-radius: 20px;
+    margin-top: 3vh;
 }
