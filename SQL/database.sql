@@ -31,6 +31,8 @@ CREATE TABLE IF NOT EXISTS `tabela`(
     nome VARCHAR(100) NOT NULL,
     pontuacao INT NOT NULL,
     data_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    Sala VARCHAR (10) NOT NULL,
+    RM INT NOT NULL,    
     tempo_gasto_segundos INT NOT NULL
 );
 
@@ -54,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `acessos`(
 -- (Opcional) consultas rápidas
 -- select * from perguntas;
 -- select * from respostas;
--- select * from tabela
+ select * from tabela
 -- CUIDADO: comentar para não apagar ao executar o script inteiro
 -- drop table acessos;
 -- drop table makeoff;

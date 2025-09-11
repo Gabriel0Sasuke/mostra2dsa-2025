@@ -31,8 +31,8 @@ $x = 1;
                 }
                 if ($x === 1) {
                     echo "<p>Esse grupo não tem imagem</p>";
-                    $x = 1;
                 }
+                $x = 1;
                 ?>
             </div>
         </div>

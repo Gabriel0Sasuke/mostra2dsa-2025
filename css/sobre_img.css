@@ -44,7 +44,7 @@ h1{
 }
 #img_fundo{
     height: 60vw;
-    width: 45vw;
+    width: 90%;
     background-color: #8b0000;
     display: flex;
     align-items: center;
@@ -53,15 +53,8 @@ h1{
     margin-bottom: 1vh;
 }
 #fundo img{
-    height: 40vw;
-    width: 35vw;
-}
-#image{
-    position: absolute;
-    height: 30vw;
-    width: 30vw;
-    left: 5vw;
-    top: 15vh;
+    height: 30vh;
+    width: auto;
 }
 h2{
     text-transform: uppercase;

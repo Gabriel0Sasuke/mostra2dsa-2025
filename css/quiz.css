@@ -111,10 +111,10 @@ button{
     z-index: 3;
 }
 #container_inicial{
-    position: fixed;
+    position: absolute;
     margin-top: 1vh;
     width: 95vw;
-    height: 90vh;
+    height: 105vh;
     background-color: #8b0000;
     z-index: 100;
     display: flex;
@@ -125,6 +125,7 @@ button{
     color: white;
     font-family: Roboto;
     padding: 1vw 1vh 1vw 1vh;
+    overflow-y: scroll;
 }
 #container_inicial h1{
     color: white;
@@ -133,7 +134,29 @@ button{
     margin-top: 0.5vh;
     font-size: 1.2em;
 }
+input[type ="number"]{
+    width: 90vw;
+    height: 4vh;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.2em;
+    text-align: left;
+    padding-left: 0.5vw;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+}
 input[type ="text"]{
+    width: 90vw;
+    height: 4vh;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.2em;
+    text-align: left;
+    padding-left: 0.5vw;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vw;
+}
+select{
     width: 90vw;
     height: 4vh;
     border-radius: 8px;
@@ -164,7 +187,7 @@ h2{
 }
 form{
     border-bottom: 3px solid white;
-    height: 20vh;
+    height: 35vh;
 }
 #btn_classificacao{
     width: 90vw;

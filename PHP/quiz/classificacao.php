@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../../include/conn.php';
-$sql = "SELECT nome, pontuacao, data_hora, tempo_gasto_segundos FROM tabela ORDER BY pontuacao DESC, tempo_gasto_segundos ASC";
+$sql = "SELECT nome, pontuacao, data_hora, tempo_gasto_segundos, sala FROM tabela ORDER BY pontuacao DESC, tempo_gasto_segundos ASC";
 $result = $conn->query($sql);
 ?>
 
@@ -27,6 +27,7 @@ $result = $conn->query($sql);
             <tr>
                 <th>Nº</th>
                 <th>Nome</th>
+                <th>Sala</th>
                 <th>Pontuação</th>
                 <th>Data</th>
                 <th>Tempo</th>
@@ -37,6 +38,7 @@ $result = $conn->query($sql);
                 <tr>
                 <td><?php echo $i; ?></td>
                 <td><?php echo $row["nome"]; ?></td>
+                <td><?php echo $row["sala"]; ?></td>
                 <td><?php echo $row["pontuacao"]; ?></td>
                 <td><?php echo $row["data_hora"]; ?></td>
                 <td><?php echo $row["tempo_gasto_segundos"]; ?></td>
@@ -50,7 +52,7 @@ $result = $conn->query($sql);
     </div>
 
     </main>
-    <button onclick="window.location='../../index.php'" id="back">Voltar ao Inicio</button>
+    <button onclick="window.location='../../index.php'" id="back"  1>Voltar ao Inicio</button>
 </body>
 
 </html>

@@ -86,6 +86,7 @@ td{
 }
 table th:nth-child(1) { width: 10%; font-size: 0.9em;}   /* Coluna Nº */
 table th:nth-child(2) { width: 35%; font-size: 0.9em;}  /* Coluna NOME */
-table th:nth-child(3) { width: 20%; font-size: 0.9em;}  /* Coluna PONTUAÇÃO */
-table th:nth-child(4) { width: 20%; font-size: 0.9em;}  /* Coluna DATA */
-table th:nth-child(5) { width: 15%; font-size: 0.9em;}  /* Coluna TEMPO */
+table th:nth-child(3) {width: 10%; font-size: 0.9em;}  /* Coluna SALA */
+table th:nth-child(4) { width: 10%; font-size: 0.9em;}  /* Coluna PONTUAÇÃO */
+table th:nth-child(5) { width: 20%; font-size: 0.9em;}  /* Coluna DATA */
+table th:nth-child(6) { width: 15%; font-size: 0.9em;}  /* Coluna TEMPO */

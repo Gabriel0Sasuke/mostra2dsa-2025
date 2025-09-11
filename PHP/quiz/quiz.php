@@ -14,36 +14,54 @@ if (!isset($_SESSION['enviado_ao_servidor'])) {
 if (isset($_SESSION['nome'])) {
     if (!isset($_SESSION['perguntas_quiz'])) {
         require_once __DIR__ . '/../../include/conn.php';
-        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-        $sorteio = $conn->query("SELECT ID FROM perguntas ORDER BY RAND() LIMIT 10");
-        if ($sorteio->num_rows > 0) {
+        // Remove STRICT para não matar a página no host gratuito, mas podemos logar
+        $sorteio = $conn->query("SELECT id FROM perguntas ORDER BY RAND() LIMIT 10");
+        if ($sorteio && $sorteio->num_rows > 0) {
             while ($pergunta_row = $sorteio->fetch_assoc()) {
-                $id_pergunta_atual = $pergunta_row['ID'];
+                $id_pergunta_atual = (int)$pergunta_row['id'];
+
+                // Busca texto da pergunta (usando bind_result para compatibilidade caso mysqlnd não esteja disponível)
                 $stmt_pergunta = $conn->prepare("SELECT texto_pergunta FROM perguntas WHERE id = ?");
-                $stmt_pergunta->bind_param("i", $id_pergunta_atual);
-                $stmt_pergunta->execute();
-                $texto_pergunta = $stmt_pergunta->get_result()->fetch_assoc()['texto_pergunta'];
-                // Embaralha a ordem das respostas a cada montagem de quiz
+                if ($stmt_pergunta) {
+                    $stmt_pergunta->bind_param("i", $id_pergunta_atual);
+                    $stmt_pergunta->execute();
+                    $stmt_pergunta->bind_result($texto_pergunta);
+                    $stmt_pergunta->fetch();
+                    $stmt_pergunta->close();
+                } else {
+                    error_log('Falha preparar stmt_pergunta: ' . $conn->error);
+                    continue;
+                }
+
+                // Respostas
                 $stmt_respostas = $conn->prepare("SELECT texto_resposta, correta FROM respostas WHERE id_pergunta = ? ORDER BY RAND()");
-                $stmt_respostas->bind_param("i", $id_pergunta_atual);
-                $stmt_respostas->execute();
-                $respostas_result = $stmt_respostas->get_result();
                 $respostas_array = [];
                 $texto_correta = '';
-                while ($resposta_row = $respostas_result->fetch_assoc()) {
-                    $respostas_array[] = $resposta_row['texto_resposta'];
-                    if ($resposta_row['correta']) {
-                        $texto_correta = $resposta_row['texto_resposta'];
+                if ($stmt_respostas) {
+                    $stmt_respostas->bind_param("i", $id_pergunta_atual);
+                    $stmt_respostas->execute();
+                    $stmt_respostas->bind_result($texto_resposta, $correta);
+                    while ($stmt_respostas->fetch()) {
+                        $respostas_array[] = $texto_resposta;
+                        if ($correta) {
+                            $texto_correta = $texto_resposta;
+                        }
                     }
+                    $stmt_respostas->close();
+                } else {
+                    error_log('Falha preparar stmt_respostas: ' . $conn->error);
                 }
+
                 if (!empty($texto_pergunta) && !empty($respostas_array)) {
                     $perguntas_para_js[] = [
-                        "texto" => $texto_pergunta,
-                        "respostas" => $respostas_array,
-                        "correta" => $texto_correta
+                        'texto' => $texto_pergunta,
+                        'respostas' => $respostas_array,
+                        'correta' => $texto_correta
                     ];
                 }
             }
+        } else {
+            error_log('Nenhuma pergunta encontrada ou erro na query: ' . $conn->error);
         }
         // Salva na sessão para persistir
         $_SESSION['perguntas_quiz'] = $perguntas_para_js;
@@ -87,12 +105,34 @@ if (isset($_SESSION['nome'])) {
             <p>2 - Você tem 3 vidas, a cada resposta errada você perde uma vida</p>
             <p>3 - Não Há Limite de Tempo para responder, mas os mais rapidos subirão no ranking...</p>
             <p>4 - Caso Saia, suas respostas serão salvas e você poderá retomar de onde parou.</p>
-            <p>5 - Boa Sorte!</p>
+            <p>5 - O Primeiro Lugar Ganhara uma Lembrancinha</p>
+            <p>6 - Boa Sorte!</p>
         </div>
         <form action="nome.php" method="post">
             <h2>Para Começar</h2>
             <label for="nome">Digite seu nome</label>
             <input type="text" placeholder="Escolha um nome legal!" id="nome" maxlength="100" required name="nome">
+            <label for="sala">Escolha sua sala</label>
+            <br>
+            <select name="sala" id="sala" required>
+                <option value="" hidden>Selecione sua sala</option>
+                <option value="1DSA">1º DSA</option>
+                <option value="1DSB">1º DSB</option>
+                <option value="1EAA">1º EAA</option>
+                <option value="1EAB">1º EAB</option>
+                <option value="2DSA">2º DSA</option>
+                <option value="2DSB">2º DSB</option>
+                <option value="2EAA">2º EAA</option>
+                <option value="2EAB">2º EAB</option>
+                <option value="3DSA">3º DSA</option>
+                <option value="3DSB">3º DSB</option>
+                <option value="3EAA">3º EAA</option>
+                <option value="3EAB">3º EAB</option>
+            </select>
+            <br>
+            <label for="rm">Digite seu RM</label>
+            <br>
+            <input type="number" placeholder="Digite seu RM" id="rm" maxlength="5" required name="rm" minlength="5">
             <button type="submit" id="btn-submit">Começar Jogo</button>
         </form>
         <button id="btn_classificacao" onclick="window.location.href='classificacao.php'">Acessar Classificação</button>
@@ -298,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    if (perguntas && perguntas.length > 0) {
+    if (Array.isArray(perguntas) && perguntas.length > 0) {
         atualizarVidas();
         if (indiceAtual >= perguntas.length) {
             // Decide se foi derrota ou vitória com base nas vidas restantes

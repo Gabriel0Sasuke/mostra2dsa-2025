@@ -58,13 +58,13 @@ if (!preg_match('/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
     </main>
     <footer>
         <div id="fr">
-            eLE ESTÁ SEMPRE TE OBSERVANDO..
+            eLE ESTÁ SEMPRE TE OBSERVANDO...
         </div>
         <div id="pe">
-            -aLFRED HITCHCOCK
+            - ALFRED HITCHCOCK
         </div>
         <div id="sala" onclick="paginanova()">
-            2dsa
+            2DSA
         </div>
     </footer>
     <script src="js/index.js"></script>

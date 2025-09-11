@@ -10,6 +10,8 @@ unset($_SESSION['tempo_segundos']);
 
 $nome = isset($_POST['nome']) ? trim($_POST['nome']) : 'Jogador';
 $_SESSION['nome'] = $nome === '' ? 'Jogador' : $nome;
+$_SESSION['sala'] = isset($_POST['sala']) ? trim($_POST['sala']) : 'N/A';
+$_SESSION['rm'] = isset($_POST['rm']) ? (int)$_POST['rm'] : 0;
 
 header("Location: quiz.php");
 exit();

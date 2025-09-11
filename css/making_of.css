@@ -58,8 +58,8 @@ h1 {
 }
 
 .producao img {
-    height: 30vw;
-    width: 30vw;
+    height: 25vh;
+    width: auto;
     margin: 6vw;
     border-radius: 20px;
 }
