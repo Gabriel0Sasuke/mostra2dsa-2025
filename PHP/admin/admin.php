@@ -168,8 +168,9 @@ $imagens = $conn->query("SELECT * FROM makeoff");
               <option value="Porta">Porta</option>
               <option value="Portfólio">Portfólio</option>
               <option value="Pôster">Pôster</option>
+              <option value="Componente">Componente</option>
             </select>
-            <p>Legenda:</p> <textarea name="legenda" id="legenda" class="size" maxlength="255" required></textarea>
+            <p>Legenda:</p> <textarea name="legenda" id="legenda" class="size" maxlength="255" placeholder="Por favor, insira um texto aqui e não apenas um ponto" required></textarea>
             <button type="submit" id="submit">Adicionar Imagem</button>
           </form>
           <button onclick="inseririmagens(2)">Voltar</button>

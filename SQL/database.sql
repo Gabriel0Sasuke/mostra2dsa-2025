@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `respostas`(
 
 --tabela para a tabela que o usuario ver os resultados
 CREATE TABLE IF NOT EXISTS `tabela`(
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY
     nome VARCHAR(100) NOT NULL,
     pontuacao INT NOT NULL,
     data_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

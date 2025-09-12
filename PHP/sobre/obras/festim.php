@@ -10,12 +10,15 @@
         #fundo{
             padding-bottom: 4vh;
         }
+        #image{
+            filter: brightness(0);
+        }
     </style>
 </head>
 
 <body>
     <h1>Festim diabólico</h1>
-    <img id="image" src="../../../images/faca.png" alt="">
+    <img id="image" src="../../../images/detetive.png" alt="">
     <div id="fundo">
         <div id="img_fundo">
             <img src="../../../images/filmes/festim_diabolico.jpg" alt="">

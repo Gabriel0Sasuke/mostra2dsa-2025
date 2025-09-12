@@ -25,8 +25,9 @@ $x = 1;
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Parede TNT") {
-                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
-                        $x = 0;
+                        ?><a href="sobre_imagem.php?id=<?php echo " $row[id] "; ?>"><img
+                                src='../../<?php echo "$row[caminho_arquivo]"; ?>'></a><?php
+                                  $x = 0;
                     }
                 }
                 if ($x === 1) {
@@ -44,8 +45,9 @@ $x = 1;
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Vídeo") {
-                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
-                        $x = 0;
+                        ?><a href="sobre_imagem.php?id=<?php echo " $row[id] "; ?>"><img
+                                src='../../<?php echo "$row[caminho_arquivo]"; ?>'></a><?php
+                                  $x = 0;
                     }
                 }
                 if ($x === 1) {
@@ -63,8 +65,9 @@ $x = 1;
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Espaço comida") {
-                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
-                        $x = 0;
+                        ?><a href="sobre_imagem.php?id=<?php echo " $row[id] "; ?>"><img
+                                src='../../<?php echo "$row[caminho_arquivo]"; ?>'></a><?php
+                                  $x = 0;
                     }
                 }
                 if ($x === 1) {
@@ -82,8 +85,9 @@ $x = 1;
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Parede interna") {
-                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
-                        $x = 0;
+                        ?><a href="sobre_imagem.php?id=<?php echo " $row[id] "; ?>"><img
+                                src='../../<?php echo "$row[caminho_arquivo]"; ?>'></a><?php
+                                  $x = 0;
                     }
                 }
                 if ($x === 1) {
@@ -101,8 +105,9 @@ $x = 1;
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Parede externa") {
-                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
-                        $x = 0;
+                        ?><a href="sobre_imagem.php?id=<?php echo " $row[id] "; ?>"><img
+                                src='../../<?php echo "$row[caminho_arquivo]"; ?>'></a><?php
+                                  $x = 0;
                     }
                 }
                 if ($x === 1) {
@@ -120,8 +125,9 @@ $x = 1;
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Personagem") {
-                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
-                        $x = 0;
+                        ?><a href="sobre_imagem.php?id=<?php echo " $row[id] "; ?>"><img
+                                src='../../<?php echo "$row[caminho_arquivo]"; ?>'></a><?php
+                                  $x = 0;
                     }
                 }
                 if ($x === 1) {
@@ -139,8 +145,9 @@ $x = 1;
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Comida") {
-                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
-                        $x = 0;
+                        ?><a href="sobre_imagem.php?id=<?php echo " $row[id] "; ?>"><img
+                                src='../../<?php echo "$row[caminho_arquivo]"; ?>'></a><?php
+                                  $x = 0;
                     }
                 }
                 if ($x === 1) {
@@ -158,8 +165,9 @@ $x = 1;
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Porta") {
-                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
-                        $x = 0;
+                        ?><a href="sobre_imagem.php?id=<?php echo " $row[id] "; ?>"><img
+                                src='../../<?php echo "$row[caminho_arquivo]"; ?>'></a><?php
+                                  $x = 0;
                     }
                 }
                 if ($x === 1) {
@@ -177,8 +185,9 @@ $x = 1;
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Portfólio") {
-                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
-                        $x = 0;
+                        ?><a href="sobre_imagem.php?id=<?php echo " $row[id] "; ?>"><img
+                                src='../../<?php echo "$row[caminho_arquivo]"; ?>'></a><?php
+                                  $x = 0;
                     }
                 }
                 if ($x === 1) {
@@ -196,8 +205,29 @@ $x = 1;
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     if ($row['grupo'] == "Pôster") {
-                        ?><a href="sobre_imagem.php?id=<?php echo" $row[id] ";?>"><img src='../../<?php echo "$row[caminho_arquivo]";?>'></a><?php
-                        $x = 0;
+                        ?><a href="sobre_imagem.php?id=<?php echo " $row[id] "; ?>"><img
+                                src='../../<?php echo "$row[caminho_arquivo]"; ?>'></a><?php
+                                  $x = 0;
+                    }
+                }
+                if ($x === 1) {
+                    echo "<p>Esse grupo não tem imagem</p>";
+                }
+                $x = 1;
+                ?>
+            </div>
+        </div>
+        <div id="Componente">
+            <h2>Componente</h2>
+            <div class="producao">
+
+                <?php
+                $result = $conn->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                    if ($row['grupo'] == "Componente") {
+                        ?><a href="sobre_imagem.php?id=<?php echo " $row[id] "; ?>"><img
+                                src='../../<?php echo "$row[caminho_arquivo]"; ?>'></a><?php
+                                  $x = 0;
                     }
                 }
                 if ($x === 1) {
